@@ -1,15 +1,14 @@
 package com.study.web.domain.member.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Getter
+@Builder
 @Entity // Entity 클래스에 Setter 생성 절대 X 왜? 객체를 언제든지 변경할 수 있어 안정성 보장 X
 public class Member {
 

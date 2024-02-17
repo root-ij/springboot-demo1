@@ -4,6 +4,8 @@ import com.study.web.domain.member.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository // @Entity class 가 있어야 JAP repository 사용 가능, 메소드 이름만으로 쿼리 생성
 public interface MemberRepository extends JpaRepository<Member, Long> { // <T = 사용될 엔티티, ID = ID 값 >
 
@@ -11,5 +13,5 @@ public interface MemberRepository extends JpaRepository<Member, Long> { // <T = 
      *  SELECT = findBy, 즉 "SELECT * FROM A WHERE B = ? and C = ?" 와 같음 */
     boolean existsByLoginId(String loginId);
     boolean existsByNickname(String nickname);
-
+    Optional<Member> findByLoginId(String loginId);
 }
