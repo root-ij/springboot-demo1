@@ -1,0 +1,17 @@
+
+spring:
+  # h2 database connect (localhost:8080)
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: 'jdbc:h2:mem:test'
+    username: sa
+    password:
+  # h2 console setting
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    database: h2
+    show-sql: true #jpa 실행 시 sql 로그에 출력
